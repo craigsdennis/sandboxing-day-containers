@@ -179,7 +179,7 @@ function App() {
         </div>
         <div className="mt-1">
           <a 
-            href="https://github.com/your-username/your-repo" 
+            href="https://github.com/craigsdennis/sandboxing-day-containers" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-blue-400 hover:text-blue-300 transition-colors"
