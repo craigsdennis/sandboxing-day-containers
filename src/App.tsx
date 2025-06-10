@@ -87,7 +87,7 @@ function App() {
       {/* Header */}
       <div className="bg-gray-800 border-b border-gray-700 p-3">
         <div className="flex items-center justify-between">
-          <h1 className="text-lg text-gray-200">Container Demo</h1>
+          <h1 className="text-lg text-gray-200">Cloudflare Containers Demo</h1>
           <div className="flex items-center gap-2">
             <label className="text-sm text-gray-400">Sandbox:</label>
             <input
@@ -99,10 +99,10 @@ function App() {
             />
             <button
               onClick={() => setHistory([])}
-              className="text-yellow-400 hover:text-yellow-300 transition-colors p-1"
+              className="text-blue-400 hover:text-blue-300 transition-colors p-1"
               title="Clear terminal history"
             >
-              ⚡
+              📦
             </button>
           </div>
         </div>
