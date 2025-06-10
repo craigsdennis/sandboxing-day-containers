@@ -6,13 +6,13 @@ export class SandboxShellContainer extends Container {
   defaultPort = 8000;
   sleepAfter = '10m';
 
-  async runCommand(command: string) {
+  async runCommand(command: string, cwd: string) {
     const response = await this.containerFetch("https://container/run", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({command})
+      body: JSON.stringify({command, cwd})
     }, this.defaultPort);
     return await response.json();
   }
