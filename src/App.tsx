@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react'
-import cloudflareLogo from './assets/Cloudflare_Logo.svg'
 
 interface TerminalOutput {
   command: string
@@ -11,7 +10,7 @@ interface TerminalOutput {
 
 function App() {
   const [slug, setSlug] = useState('demo')
-  const [cwd, setCwd] = useState('/app')
+  const [cwd, setCwd] = useState('/root')
   const [command, setCommand] = useState('')
   const [history, setHistory] = useState<TerminalOutput[]>([])
   const [isLoading, setIsLoading] = useState(false)
@@ -84,14 +83,13 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white font-mono">
+    <div className="min-h-screen bg-gray-900 text-white font-mono flex flex-col">
       {/* Header */}
-      <div className="bg-gray-800 border-b border-gray-700 p-4">
-        <div className="flex items-center gap-4">
-          <img src={cloudflareLogo} className="h-8 w-auto" alt="Cloudflare logo" />
-          <h1 className="text-xl font-bold text-orange-400">Cloudflare Container Sandbox</h1>
-          <div className="flex items-center gap-2 ml-auto">
-            <label className="text-sm text-gray-300">Sandbox:</label>
+      <div className="bg-gray-800 border-b border-gray-700 p-3">
+        <div className="flex items-center justify-between">
+          <h1 className="text-lg text-gray-200">Container Demo</h1>
+          <div className="flex items-center gap-2">
+            <label className="text-sm text-gray-400">Sandbox:</label>
             <input
               type="text"
               value={slug}
@@ -99,6 +97,13 @@ function App() {
               className="bg-gray-700 text-white px-2 py-1 rounded text-sm border border-gray-600 focus:border-orange-400 focus:outline-none"
               placeholder="sandbox-name"
             />
+            <button
+              onClick={() => setHistory([])}
+              className="text-yellow-400 hover:text-yellow-300 transition-colors p-1"
+              title="Clear terminal history"
+            >
+              ⚡
+            </button>
           </div>
         </div>
       </div>
@@ -165,6 +170,23 @@ function App() {
             autoComplete="off"
           />
         </form>
+      </div>
+
+      {/* Footer */}
+      <div className="bg-gray-800 border-t border-gray-700 p-3 text-center text-sm">
+        <div className="text-gray-300">
+          Built with 🧡 on <span className="text-orange-400">Cloudflare Workers</span> + <span className="text-orange-400">Containers</span> + <span className="text-orange-400">Python</span>
+        </div>
+        <div className="mt-1">
+          <a 
+            href="https://github.com/your-username/your-repo" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-blue-400 hover:text-blue-300 transition-colors"
+          >
+            👀 the code
+          </a>
+        </div>
       </div>
     </div>
   )

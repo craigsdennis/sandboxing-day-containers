@@ -18,7 +18,7 @@ export class SandboxShellContainer extends Container {
   }
 }
 
-app.post('/sandbox/:slug', async(c) => {
+app.post('/api/sandbox/:slug', async(c) => {
   const payload = await c.req.json();
   const {slug} = c.req.param();
   const id = c.env.SANDBOX_SHELL_CONTAINER.idFromName(slug);
