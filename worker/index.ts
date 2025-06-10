@@ -23,7 +23,7 @@ app.post('/sandbox/:slug', async(c) => {
   const {slug} = c.req.param();
   const id = c.env.SANDBOX_SHELL_CONTAINER.idFromName(slug);
   const container = c.env.SANDBOX_SHELL_CONTAINER.get(id);
-  const result = await container.runCommand(payload.command);
+  const result = await container.runCommand(payload.command, payload.cwd);
   return c.json(result);
 
 });
