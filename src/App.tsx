@@ -71,6 +71,7 @@ function App() {
       setHistory(prev => [...prev, errorOutput])
     } finally {
       setIsLoading(false)
+      inputRef.current?.focus()
     }
   }
 
