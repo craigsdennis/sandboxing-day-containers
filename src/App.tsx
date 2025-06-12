@@ -25,6 +25,7 @@ function App() {
     if (terminalRef.current) {
       terminalRef.current.scrollTop = terminalRef.current.scrollHeight
     }
+    inputRef.current?.focus()
   }, [history])
 
   const executeCommand = async (cmd: string) => {
@@ -71,7 +72,7 @@ function App() {
       setHistory(prev => [...prev, errorOutput])
     } finally {
       setIsLoading(false)
-      inputRef.current?.focus()
+      setTimeout(() => inputRef.current?.focus(), 0)
     }
   }
 
@@ -80,6 +81,7 @@ function App() {
     if (command.trim() && !isLoading) {
       executeCommand(command)
       setCommand('')
+      setTimeout(() => inputRef.current?.focus(), 100)
     }
   }
 

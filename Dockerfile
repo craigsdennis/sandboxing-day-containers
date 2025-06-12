@@ -3,6 +3,8 @@ FROM python:3.12-slim
 # Install any extra tools your commands might need
 RUN apt-get update && apt-get install -y --no-install-recommends \
         bash \
+        curl \
+        git \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
