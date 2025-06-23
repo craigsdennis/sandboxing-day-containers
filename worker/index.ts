@@ -1,5 +1,5 @@
 import { Hono } from 'hono';
-import { Container } from 'cf-containers';
+import { Container, getContainer } from '@cloudflare/containers';
 const app = new Hono<{ Bindings: Env }>();
 
 export class SandboxShellContainer extends Container {
@@ -13,7 +13,7 @@ export class SandboxShellContainer extends Container {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({command, cwd})
-    }, this.defaultPort);
+    });
     return await response.json();
   }
 }
@@ -21,8 +21,7 @@ export class SandboxShellContainer extends Container {
 app.post('/api/sandbox/:slug', async(c) => {
   const payload = await c.req.json();
   const {slug} = c.req.param();
-  const id = c.env.SANDBOX_SHELL_CONTAINER.idFromName(slug);
-  const container = c.env.SANDBOX_SHELL_CONTAINER.get(id);
+  const container = getContainer(c.env.SANDBOX_SHELL_CONTAINER, slug);
   const result = await container.runCommand(payload.command, payload.cwd);
   return c.json(result);
 
