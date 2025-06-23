@@ -12,8 +12,8 @@
 		"cf-typegen": "wrangler types"
 	},
 	"dependencies": {
+		"@cloudflare/containers": "^0.0.10",
 		"@tailwindcss/vite": "^4.1.8",
-		"cf-containers": "^0.0.9",
 		"hono": "^4.7.11",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",

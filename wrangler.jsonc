@@ -6,7 +6,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "sandboxing-day",
   "main": "worker/index.ts",
-  "compatibility_date": "2025-06-07",
+  "compatibility_date": "2025-06-22",
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "not_found_handling": "single-page-application"
@@ -19,7 +19,7 @@
       "class_name": "SandboxShellContainer",
       "max_instances": 40,
       "name": "sandbox-shell",
-      "configuration": { "image": "./Dockerfile" }
+      "image": "./Dockerfile"
     }
   ],
   "durable_objects": {
