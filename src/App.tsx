@@ -178,7 +178,7 @@ function App() {
       {/* Footer */}
       <div className="bg-gray-800 border-t border-gray-700 p-3 text-center text-sm">
         <div className="text-gray-300">
-          Built with 🧡 on <span className="text-orange-400">Cloudflare Workers</span> + <span className="text-orange-400">Containers</span> + <span className="text-orange-400">Python</span>
+          Built with 🧡 on <a href="https://developers.cloudflare.com" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 transition-colors">Cloudflare Workers</a> + <a href="https://developers.cloudflare.com/containers" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 transition-colors">Containers</a> + <a href="https://python.org" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 transition-colors">Python</a>
         </div>
         <div className="mt-1">
           <a 
