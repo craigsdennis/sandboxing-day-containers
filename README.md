@@ -2,7 +2,7 @@
 
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/craigsdennis/sandboxing-day-containers)
 
-[<img src="https://img.youtube.com/vi/ILXqT-ddIFw/0.jpg">](https://youtu.be/ILXqT-ddIFw "TITLE")
+[<img src="https://img.youtube.com/vi/ILXqT-ddIFw/0.jpg">](https://youtu.be/ILXqT-ddIFw "Use Cloudflare Containers to create a sandbox")
 
 [Cloudflare Containers](https://developers.cloudflare.com/containers/) are here and this code explores building a sandboxed code execution environment.
 
@@ -15,5 +15,11 @@ Click the Deploy to Cloudflare button, or run things manually.
 ```bash
 npm run deploy
 ```
+
+## Learn more
+
+
+[<img src="https://img.youtube.com/vi/oyOaxMY4eNo/0.jpg">](https://youtu.be/oyOaxMY4eNo "Containers 101")
+
 
 __NOTE__ AI was used to generate portions of this demo. See [the truth window folder](./truth-window/) for what prompts were used.
