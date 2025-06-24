@@ -16,4 +16,4 @@ Click the Deploy to Cloudflare button, or run things manually.
 npm run deploy
 ```
 
-__NOTE__ AI was used to generate portions of this demo. See [./truth-window] folder for prompts used.
+__NOTE__ AI was used to generate portions of this demo. See [the truth window folder](./truth-window/) for what prompts were used.
